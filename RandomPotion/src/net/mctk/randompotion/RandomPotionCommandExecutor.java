@@ -23,13 +23,14 @@ public class RandomPotionCommandExecutor implements CommandExecutor{
 	static int MAX_EFFECT_LEVEL;
 	static int EFFECT_AMOUNT;
 	static int POTION_AMOUNT;
+	static int EFFECT_TIME;
 	
-	
-	public RandomPotionCommandExecutor(RandomPotionPlugin plugin, int maxEffectLevel, int effectAmount, int potionAmount){
+	public RandomPotionCommandExecutor(RandomPotionPlugin plugin, int maxEffectLevel, int effectAmount, int potionAmount, int effectTime){
 		this.plugin = plugin;
 		MAX_EFFECT_LEVEL = maxEffectLevel;
 		EFFECT_AMOUNT = effectAmount;
 		POTION_AMOUNT = potionAmount;
+		EFFECT_TIME = effectTime;
 	}
 	
 	@Override
@@ -105,7 +106,7 @@ public class RandomPotionCommandExecutor implements CommandExecutor{
 			for(int j=0; j<EFFECT_AMOUNT; j++){
 				int levelRandom = rand1.nextInt(MAX_EFFECT_LEVEL);
 				int effectRandom = rand2.nextInt(POTION_EFFECT_SIZE);
-				potionMeta.addCustomEffect(new PotionEffect(pet[effectRandom], 7200, levelRandom), false);
+				potionMeta.addCustomEffect(new PotionEffect(pet[effectRandom], EFFECT_TIME, levelRandom), false);
 				//System.out.println(effectRandom);
 			}
 			

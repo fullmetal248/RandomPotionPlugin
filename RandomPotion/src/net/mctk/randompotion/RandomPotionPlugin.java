@@ -10,6 +10,7 @@ public class RandomPotionPlugin extends JavaPlugin{
 	int maxeffectlevel;
 	int effectamount;
 	int potionamount;
+	int effecttime;
 	Server server;
 	@Override
 	public void onEnable(){
@@ -23,8 +24,10 @@ public class RandomPotionPlugin extends JavaPlugin{
 		maxeffectlevel = this.getConfig().getInt("maxeffectlevel");
 		effectamount = this.getConfig().getInt("effectamount");
 		potionamount = this.getConfig().getInt("potionamount");
+		effecttime = this.getConfig().getInt("effecttime");
 		
-		getCommand("randompotion").setExecutor(new RandomPotionCommandExecutor(this, maxeffectlevel, effectamount, potionamount));
+		
+		getCommand("randompotion").setExecutor(new RandomPotionCommandExecutor(this, maxeffectlevel, effectamount, potionamount, effecttime));
 	}
 	
 	@Override

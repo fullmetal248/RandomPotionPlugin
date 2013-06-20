@@ -8,7 +8,7 @@ commands:
     description: RandomPotion plugin maintenance command.
     aliases: rp
     usage: /<command> randp
-    permission: nbtedit
+    permission: randompotion
     permission-message: You don't have permission <permission>
 permissions:
   randompotion:
