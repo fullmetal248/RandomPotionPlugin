@@ -1,0 +1,16 @@
+name: RandomPotionPlugin
+main: net.mctk.randompotion.RandomPotionPlugin
+version: 1.0.0
+authors: [fullmetal248]
+load: startup
+commands:
+  randompotion:
+    description: RandomPotion plugin maintenance command.
+    aliases: rp
+    usage: /<command> randp
+    permission: nbtedit
+    permission-message: You don't have permission <permission>
+permissions:
+  randompotion:
+    description: RandomPotion plugin maintenance command.
+    default: op
